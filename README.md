@@ -1,6 +1,6 @@
 # RocketMQ Docker
 
-## 配置hosts文件 (注意修改ip)(域名在.env文件中)(可有可无)
+## 配置hosts文件 (注意修改ip)(域名在.env文件中)(可选)
 
 - `192.168.16.240 namesrv.rocketmq.com`
 - `192.168.16.240 m.a.broker.rocketmq.com`
@@ -24,17 +24,15 @@
 
 ## RocketMQ Console (注意修改ip)
 
-- `docker run -d -e "JAVA_OPTS=-Drocketmq.namesrv.addr=192.168.16.240:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false" -p 8080:8080 -t styletang/rocketmq-console-ng`
+https://github.com/apache/rocketmq-externals/tree/master/rocketmq-console 
+```
+docker pull styletang/rocketmq-console-ng
+docker run -d -e "JAVA_OPTS=-Drocketmq.namesrv.addr=192.168.16.240:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false" -p 8080:8080 -t styletang/rocketmq-console-ng
+```
 
 ## RocketMQ资料
 
+- `https://github.com/apache/rocketmq-externals` 官网仓库列表
 - `https://dist.apache.org/repos/dist/release/rocketmq/`
-- `https://github.com/jingxizheng/rocketmq-docker-sample` (参考此例子进行局部调整)
 
-## 源码地址 (将会在两个git仓库同步发布最新代码)
 
-- [GitHub][1]
-- [码云][2]
-
-[1]:https://github.com/FengRi/rocketmq-docker "GitHub"
-[2]:https://gitee.com/fengri/rocketmq-docker "码云"
